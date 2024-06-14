@@ -1,12 +1,6 @@
-import { model } from 'mongoose';
+import mongoose, { Schema, model } from 'mongoose';
 import bcrypt from 'bcrypt';
-import { 
-    CITIES, 
-    EDUCATION_LEVEL, 
-    WORK_EXPERIENCE, 
-    COURSE_STATUSES,
-    CATEGORIES
-} from '../../constants';
+import { CITIES, EDUCATION_LEVEL, WORK_EXPERIENCE, COURSE_STATUSES, CATEGORIES } from '../constants.js';
 
 const UserSchema = new mongoose.Schema({
     username: { type: String, required: true, unique: true },
@@ -21,7 +15,7 @@ const UserSchema = new mongoose.Schema({
     location: { type: String, enum: CITIES },
     educationLevel: { type: String, enum: EDUCATION_LEVEL },
     workExperience: { type: String, enum: WORK_EXPERIENCE },
-    interestedCategories: {type: String, enum: CATEGORIES},
+    interestedCategories: {type: Map, enum: CATEGORIES},
     coursesTaking: [
         {
             courseId: { type: Schema.Types.ObjectId, ref: 'Course' },
