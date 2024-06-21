@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import passport from 'passport';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 import { passportConfig } from './config/passport.js';
 
 import authRoutes from './routes/auth.js';
@@ -14,6 +15,7 @@ dotenv.config();
 const app = express();
 //passportConfig(passport);
 
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 //app.use(passport.initialize());
