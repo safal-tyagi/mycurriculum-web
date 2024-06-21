@@ -14,7 +14,7 @@ const CourseList = ({ searchTerm }) => {
   if (error) return <div>Error: {error.message}</div>;
 
   const filteredCourses = courses.filter(course =>
-    course.name.toLowerCase().includes(searchTerm.toLowerCase())
+    course.name?.toLowerCase().includes(searchTerm?.toLowerCase())
   );
 
   return (
