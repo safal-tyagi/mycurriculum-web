@@ -54,6 +54,130 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.markdown-body {
+  background-color: #ffffff; /* Ensure a consistent background */
+  color: #000000; /* Ensure consistent text color */
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: auto;
+}
+
+.markdown-body h1, 
+.markdown-body h2, 
+.markdown-body h3, 
+.markdown-body h4, 
+.markdown-body h5, 
+.markdown-body h6 {
+  margin-top: 1em;
+}
+
+.markdown-body p {
+  margin: 0.5em 0;
+}
+
+.markdown-body pre {
+  background-color: #1e1e1e; /* Dark background for code blocks */
+  color: #dcdcdc; /* Light text color for code */
+  padding: 1em;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.markdown-body code {
+  background-color: #f5f5f5; /* Light background for inline code */
+  color: #c7254e; /* Text color for inline code */
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.markdown-body pre code {
+  background: none; /* Remove inline code background inside pre */
+  color: inherit; /* Inherit color from pre */
+}
+
+/* Add additional styles for syntax highlighting */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1e1e1e; /* Match pre background */
+  color: #dcdcdc; /* Match pre text color */
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #6a9955;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #569cd6;
+}
+
+.hljs-literal,
+.hljs-number,
+.hljs-tag .hljs-attr {
+  color: #b5cea8;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d69d85;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #d7ba7d;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #4ec9b0;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #9cdcfe;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #d69d85;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #d7ba7d;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #ce9178;
+}
+
+.hljs-meta {
+  color: #d7ba7d;
+}
+
+.hljs-deletion {
+  background: #5b0000;
+  color: #ffffff;
+}
+
+.hljs-addition {
+  background: #144212;
+  color: #ffffff;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -65,4 +189,40 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+
+  .markdown-body {
+    background-color: #ffffff; /* Ensure a consistent background for light mode */
+    color: #000000; /* Ensure consistent text color for light mode */
+  }
+
+  .markdown-body pre {
+    background-color: #f5f5f5; /* Light background for code blocks in light mode */
+    color: #000000; /* Dark text color for code in light mode */
+  }
+
+  .hljs {
+    background: #f5f5f5; /* Match pre background for light mode */
+    color: #000000; /* Match pre text color for light mode */
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cardMedia {
+  height: 140px;
+}
+
+.cardContent {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardContent .MuiTypography-root {
+  flex: 1;
 }
