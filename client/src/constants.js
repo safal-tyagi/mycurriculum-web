@@ -28,7 +28,7 @@ export const COURSE_STATUSES = [
 
 export const CATEGORIES = {
     'Computer Science': [
-        'Data Structures & Algorithms',
+        'Data Structures and Algorithms',
         'Programming Languages',
         'Computer Networking',
         'Operating Systems',

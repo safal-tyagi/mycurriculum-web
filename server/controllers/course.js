@@ -66,16 +66,16 @@ const generateContentPrompt = (courseName, chapterNumber, chapterName, sectionNu
     Course Name: ${courseName}
     Chapter ${chapterNumber}: ${chapterName}
     Section ${sectionNumber}: ${sectionName}
-    
-    Here is an example of content generated based on the course name, chapter number, chapter name, and section number provided:
 
-    Instructions: 
+    Do not include course name, chapter name, or section name in the content. Just provide the detailed content for the section.
+    
+    Below, inside the triple quotes, is the sample content generated based on: 
         Course Name: Basics of Semiconductor
         Chapter 1: Introduction to Semiconductors
         Section 1.1: What are Semiconductors?
 
-    Output:
-        'Semiconductors are materials with electrical conductivity that falls between that of conductors (like copper) and insulators (like glass). They are the foundational components in modern electronic devices due to their unique properties. Here are the key characteristics and applications of semiconductors:
+    '''
+        Semiconductors are materials with electrical conductivity that falls between that of conductors (like copper) and insulators (like glass). They are the foundational components in modern electronic devices due to their unique properties. Here are the key characteristics and applications of semiconductors:
 
         ### Key Characteristics:
         1. **Conductivity**: Semiconductors have moderate electrical conductivity, which can be manipulated by adding impurities, a process known as doping.
@@ -95,7 +95,8 @@ const generateContentPrompt = (courseName, chapterNumber, chapterName, sectionNu
         4. **Solar Cells**: Semiconductors like silicon are used in photovoltaic cells to convert sunlight into electricity.
         5. **LEDs and Lasers**: Semiconductor materials are used in light-emitting diodes (LEDs) and laser diodes for a variety of lighting and display applications.
 
-        Semiconductors have revolutionized technology and are crucial in the development of modern electronic and computing systems.'
+        Semiconductors have revolutionized technology and are crucial in the development of modern electronic and computing systems.
+    '''
     `;
 };
 

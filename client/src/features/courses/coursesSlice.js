@@ -16,7 +16,7 @@ const coursesSlice = createSlice({
   initialState: {
     categories: ['Computer Science'],
     courses: [
-      'Data Structures & Algorithms',
+      'Data Structures and Algorithms',
       'Programming Languages',
       'Computer Networking',
       'Operating Systems',
@@ -30,7 +30,7 @@ const coursesSlice = createSlice({
       'Artificial Intelligence',
       'Cybersecurity',
     ],
-    levels: ['Basic', 'Intermediate', 'Advanced'],
+    levels: ['Beginner', 'Intermediate', 'Advanced'],
     selectedCategory: '',
     selectedCourse: '',
     selectedLevel: '',
