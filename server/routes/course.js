@@ -5,7 +5,8 @@ import {
     createCourse, 
     updateCourse, 
     deleteCourse,
-    createCourseGPT
+    createCourseGPT,
+    addContentGPT
 } from '../controllers/course.js';
 
 const router = express.Router();
@@ -15,6 +16,7 @@ router.get('/:id', getCourse);
 router.post('/', createCourse);
 router.put('/:id', updateCourse);
 router.delete('/:id', deleteCourse);
-router.post('/gpt', createCourseGPT);
+router.post('/gpt/create-course', createCourseGPT);
+router.post('/gpt/add-content/:courseId/:chapterNumber/:sectionNumber', addContentGPT);
 
 export default router;

@@ -1,3 +1,4 @@
+import { extractJSON } from "../helpers.js";
 import Course from "../models/course.js";
 import OpenAI from "openai";
 
@@ -12,16 +13,8 @@ const generateCoursePrompt = (name, level) => {
     Course Level: ${level}
 
     Try to include at least 7 to 10 sections in each chapter and at least 10 to 12 chapters in the course. 
-    Each section should have at least 2 to 3 paragraphs of content.
-
-    Generate detailed content for the following course chapter and section. 
-    Overall, the content should be long, detailed, informative, easy-to-understand, and engaging for learners. 
-    Ensure that the content is accurate and relevant to the course topic.
-    You can include examples, case studies, and practical applications to enhance the learning experience.
-    
-    Below is an example of how the course curriculum should be structured in JSON format. 
-    Make sure the JSON does not contain any errors, missing information, or formatting issues like unsupported characters or symbols.
-
+ 
+    Below is an example of how the course curriculum should be structured in JSON format without content: 
 
     {
         "name": "Basics of Semiconductor",
@@ -35,12 +28,12 @@ const generateCoursePrompt = (name, level) => {
                     {
                         "section_number": 1.1,
                         "section_name": "What are Semiconductors?",
-                        "content": "Semiconductors are materials that have electrical conductivity between that of a conductor and an insulator. They are fundamental to modern electronics and have properties that can be manipulated through doping and other processes. Semiconductors form the basis of many electronic devices, including transistors, diodes, and integrated circuits. The unique ability of semiconductors to control the flow of electrical current makes them essential in the development of various electronic components."
+                        "content": ""
                     },
                     {
                         "section_number": 1.2,
                         "section_name": "History of Semiconductors",
-                        "content": "The history of semiconductors dates back to the early 19th century when scientists first observed that certain materials could conduct electricity under specific conditions. The discovery of the transistor in 1947 by John Bardeen, Walter Brattain, and William Shockley at Bell Labs marked a significant milestone in semiconductor history. This breakthrough paved the way for the development of modern electronics, leading to the creation of integrated circuits and the microprocessor revolution."
+                        "content": ""
                     }
                 ]
             },
@@ -51,7 +44,7 @@ const generateCoursePrompt = (name, level) => {
                     {
                         "section_number": 2.1,
                         "section_name": "Intrinsic Semiconductors",
-                        "content": "Intrinsic semiconductors are pure forms of semiconductor materials without any significant impurities. The most common intrinsic semiconductors are silicon and germanium. In their pure state, these materials have equal numbers of electrons and holes, which are the charge carriers responsible for electrical conductivity. The intrinsic carrier concentration is dependent on the material and its temperature. For example, at room temperature, silicon has an intrinsic carrier concentration of about 1.5 x 10^10 cm^-3. Intrinsic semiconductors are used in various basic research and applications where the effects of impurities need to be minimized."
+                        "content": ""
                     },
                 ]
             },
@@ -65,9 +58,10 @@ const generateCoursePrompt = (name, level) => {
 
 const generateContentPrompt = (courseName, chapterNumber, chapterName, sectionNumber, sectionName) => {
     return `Generate detailed content for the following course chapter and section. 
-    Overall, the content should be long, detailed, informative, easy-to-understand, and engaging for learners. 
+    The content should be organized in long, detailed, easy-to-understand paragraphs. 
+    Use proper formatting, headings, and bullet points to structure the content effectively.
     Ensure that the content is accurate and relevant to the course topic.
-    You can include examples, case studies, and practical applications to enhance the learning experience.
+    Include examples, code-snippets, diagrams, case studies, and practical applications to enhance the learning experience.
   
     Course Name: ${courseName}
     Chapter ${chapterNumber}: ${chapterName}
@@ -75,16 +69,33 @@ const generateContentPrompt = (courseName, chapterNumber, chapterName, sectionNu
     
     Here is an example of content generated based on the course name, chapter number, chapter name, and section number provided:
 
-    instructions: 
+    Instructions: 
         Course Name: Basics of Semiconductor
         Chapter 1: Introduction to Semiconductors
         Section 1.1: What are Semiconductors?
 
-    output:
-        Semiconductors are materials that have electrical conductivity between that of a conductor and an insulator. 
-        They are fundamental to modern electronics and have properties that can be manipulated through doping and other processes. 
-        Semiconductors form the basis of many electronic devices, including transistors, diodes, and integrated circuits. 
-        The unique ability of semiconductors to control the flow of electrical current makes them essential in the development of various electronic components.
+    Output:
+        'Semiconductors are materials with electrical conductivity that falls between that of conductors (like copper) and insulators (like glass). They are the foundational components in modern electronic devices due to their unique properties. Here are the key characteristics and applications of semiconductors:
+
+        ### Key Characteristics:
+        1. **Conductivity**: Semiconductors have moderate electrical conductivity, which can be manipulated by adding impurities, a process known as doping.
+        2. **Band Gap**: They have a band gap between the valence band and conduction band. This gap allows them to control the flow of electrical current.
+        3. **Doping**: By introducing impurities into the semiconductor material, its electrical properties can be altered. Doping can create either an excess of electrons (n-type) or an excess of holes (p-type).
+        4. **Temperature Sensitivity**: The conductivity of semiconductors increases with temperature, which is the opposite of conductors.
+
+        ### Common Semiconductor Materials:
+        - **Silicon (Si)**: The most widely used semiconductor material, especially in integrated circuits and microchips.
+        - **Germanium (Ge)**: Used in some high-speed devices, though less common than silicon.
+        - **Gallium Arsenide (GaAs)**: Used in specialized applications like microwave and high-frequency circuits.
+
+        ### Applications:
+        1. **Transistors**: Semiconductors are used to make transistors, which are the building blocks of electronic devices, allowing for amplification and switching of electronic signals.
+        2. **Diodes**: Semiconductors are used in diodes, which allow current to flow in one direction and block it in the opposite direction.
+        3. **Integrated Circuits (ICs)**: Semiconductors form the basis of ICs, which are essential components in computers, smartphones, and many other electronic devices.
+        4. **Solar Cells**: Semiconductors like silicon are used in photovoltaic cells to convert sunlight into electricity.
+        5. **LEDs and Lasers**: Semiconductor materials are used in light-emitting diodes (LEDs) and laser diodes for a variety of lighting and display applications.
+
+        Semiconductors have revolutionized technology and are crucial in the development of modern electronic and computing systems.'
     `;
 };
 
@@ -125,16 +136,22 @@ export const createCourse = async (req, res) => {
 export const createCourseGPT = async (req, res) => {
     const { name, level } = req.body;
 
+    // check if course already exists
+    const existingCourse = await Course.findOne({ name, level });
+    if (existingCourse) {
+        return res.status(400).send('Course already exists');
+    }
+
     try {
         const response = await openai.chat.completions.create({
-            model: 'gpt-3.5-turbo-16k',
+            model: 'gpt-4o',
             messages: [{
                 role: 'user',
                 content: generateCoursePrompt(name, level),
             }],
         });
 
-        const courseContent = JSON.parse(response.choices[0].message.content);
+        const courseContent = extractJSON(response.choices[0].message.content);
 
         const newCourse = new Course({
             name: courseContent.name,
@@ -152,6 +169,48 @@ export const createCourseGPT = async (req, res) => {
         res.status(500).send("Error generating course content");
     }
 };
+
+export const addContentGPT = async (req, res) => {
+    const { courseId, chapterNumber, sectionNumber } = req.params;
+  
+    try {
+      const course = await Course.findById(courseId);
+      if (!course) {
+        return res.status(404).send('Course not found');
+      }
+  
+      const chapter = course.chapters.find(c => c.chapter_number == chapterNumber);
+      if (!chapter) {
+        return res.status(404).send('Chapter not found');
+      }
+  
+      const section = chapter.sections.find(s => s.section_number == sectionNumber);
+      if (!section) {
+        return res.status(404).send('Section not found');
+      }
+
+      // Maintain conversation history including previous responses
+    const conversationHistory = [
+        { role: 'user', content: generateCoursePrompt(course.name, course.level) },
+        { role: 'assistant', content: JSON.stringify(course) }, // Previous assistant response
+        { role: 'user', content: generateContentPrompt(course.name, chapterNumber, chapter.chapter_name, sectionNumber, section.section_name)}
+      ];
+  
+      const response = await openai.chat.completions.create({
+        model: 'gpt-4o',
+        messages: conversationHistory,
+      });
+  
+      const content = response.choices[0].message.content;
+      section.content = content;
+  
+      await course.save();
+      res.send(course);
+    } catch (error) {
+      console.error("Error generating content for the section: ", error.message);
+      res.status(500).send({ error: 'Error generating content for the section' });
+    }
+  };
 
 export const updateCourse = async (req, res) => {
     try {

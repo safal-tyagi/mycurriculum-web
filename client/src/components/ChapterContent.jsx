@@ -5,6 +5,7 @@ import { useGetCourseQuery } from '../features/courses/coursesSlice';
 import { Drawer, List, ListItem, ListItemText, IconButton, AppBar, Toolbar, Typography, CssBaseline } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button } from '@mui/material';
+import ReactMarkdown from 'react-markdown';
 
 const ChapterContent = () => {
   const { id, chapter } = useParams();
@@ -57,8 +58,8 @@ const ChapterContent = () => {
         <h2>{currentChapter.chapter_name}</h2>
         {currentChapter.sections.map(section => (
           <div key={section.section_number}>
-            <h4>{section.section_name}</h4>
-            <p>{section.content}</p>
+            {/* <h4>{section.section_name}</h4> */}
+            <ReactMarkdown>{section.content}</ReactMarkdown>
           </div>
         ))}
       </main>
