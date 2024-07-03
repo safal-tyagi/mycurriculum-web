@@ -1,9 +1,11 @@
 import express from 'express';
+import path from 'path';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import passport from 'passport';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import { fileURLToPath } from 'url';
 import { passportConfig } from './config/passport.js';
 
 import authRoutes from './routes/auth.js';
@@ -29,4 +31,11 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use('/api/courses', courseRoutes);
 
 const PORT = process.env.PORT || 3000;
+
+// front end
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, '../client/dist')));
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../client/dist', 'index.html')));
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
