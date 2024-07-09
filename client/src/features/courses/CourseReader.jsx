@@ -111,7 +111,6 @@ const CourseReader = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Toolbar /> {/* This Toolbar component ensures that the content is pushed below the AppBar */}
       <Drawer anchor="left" open={drawerOpen} onClose={() => toggleDrawer(false)}>
         <List>
           {currentCourse && currentCourse.chapters.map((chapter) => (
@@ -197,7 +196,6 @@ const CourseReader = () => {
         )}
         {currentSection && (
           <Grid container spacing={2} justifyContent="center">
-            <Grid item xs={12} sm={10} md={8}>
               <div className="markdown-body">
                 <ReactMarkdown
                   children={selectedSectionContent}
@@ -205,7 +203,6 @@ const CourseReader = () => {
                   rehypePlugins={[rehypeHighlight]}
                 />
               </div>
-            </Grid>
           </Grid>
         )}
       </Container>
