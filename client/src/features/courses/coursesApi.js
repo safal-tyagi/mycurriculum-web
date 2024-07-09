@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const SERVER_URL = 'http://localhost:3000';
+const SERVER_URL = 'http://mycurriculum.io';
 export const coursesApi = createApi({
   reducerPath: 'coursesApi',
   baseQuery: fetchBaseQuery({ baseUrl: `${SERVER_URL}/api/courses` }),

@@ -26,6 +26,9 @@ import {
 } from '@mui/icons-material';
 import { useGetCourseQuery, useAddContentGPTMutation } from './coursesApi';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeHighlight from 'rehype-highlight';
+import 'highlight.js/styles/a11y-dark.css';
 import '../../index.css';
 const CourseReader = () => {
   const { courseId } = useParams();
@@ -196,7 +199,11 @@ const CourseReader = () => {
           <Grid container spacing={2} justifyContent="center">
             <Grid item xs={12} sm={10} md={8}>
               <div className="markdown-body">
-                <ReactMarkdown>{selectedSectionContent}</ReactMarkdown>
+                <ReactMarkdown
+                  children={selectedSectionContent}
+                  remarkPlugins={[remarkGfm]}
+                  rehypePlugins={[rehypeHighlight]}
+                />
               </div>
             </Grid>
           </Grid>
