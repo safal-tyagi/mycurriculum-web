@@ -21,6 +21,7 @@ const CourseSchema = new mongoose.Schema({
     type: String,
     enum: COURSE_LEVELS
   },
+  card_image: String,
   chapters: [chapterSchema],
 });
 

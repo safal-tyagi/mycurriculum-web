@@ -4,6 +4,14 @@ import OpenAI from "openai";
 
 const openai = new OpenAI({ apiKey: `${process.env.OPENAI_API_KEY}` });
 
+const generateCardImage = (name, highlights) => {
+    return `Generate a visually appealing course card image for the following course. DO NOT include any text in image. 
+
+    Course Name: ${name}
+    Course Highlights: ${highlights}
+    `
+};
+
 const generateCoursePrompt = (name, level) => {
     return `Generate detailed and well organized course curriculum with chapter names, 
     chapter numbers and chapter sections for the following Course Name and Course Level 
@@ -20,6 +28,7 @@ const generateCoursePrompt = (name, level) => {
         "name": "Basics of Semiconductor",
         "highlights": "Introduction to semiconductor basics, properties, and applications",
         "level": "Basic",
+        "card_image": "",
         "chapters": [
             {
             "chapter_number": 1,
@@ -170,6 +179,36 @@ export const createCourseGPT = async (req, res) => {
         res.status(500).send("Error generating course content");
     }
 };
+
+export const addCardImageGPT = async (req, res) => {
+    const { courseId } = req.params;
+
+    try {
+        const course = await Course.findById(courseId);
+        if (!course) {
+            return res.status(404).send('Course not found');
+        }
+
+        const { name, highlights } = course;
+        const response = await openai.images.generate({
+            prompt: generateCardImage(name, highlights),
+            model: 'dall-e-3',
+            quality: 'standard',
+            size: '1024x1024',
+            response_format: 'b64_json',
+            style: 'natural',
+        });
+
+        const courseCardImage = response.data[0].b64_json;
+        course.card_image = courseCardImage;
+
+        await course.save();
+        res.send(course);
+    } catch (error) {
+        console.error("Error generating course card image: ", error.message);
+        res.status(500).send({ error: 'Error generating course card image' });
+    }
+}
 
 export const addContentGPT = async (req, res) => {
     const { courseId, chapterNumber, sectionNumber } = req.params;

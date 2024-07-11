@@ -101,7 +101,7 @@ const Home = () => {
               <CardMedia
                 component="img"
                 height="140"
-                image={courseImage}
+                image={ course.card_image ? `data:image/png;base64,${course.card_image}` : courseImage}
                 alt={course.name}
               />
               <CardContent>
