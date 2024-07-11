@@ -17,7 +17,7 @@ const App = () => {
   return (
     <Router>
       <AppBar position="fixed">
-        <Toolbar>
+      <Toolbar sx={{ width: '100%' }}>
           <Class sx={{ mr: 2 }} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             My Curriculum
@@ -30,8 +30,9 @@ const App = () => {
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'flex-start',
+          alignItems: 'center',
           minHeight: '100vh',
+          width: '100%',
         }}
       >
         <Container>
