@@ -36,7 +36,7 @@ const PORT = process.env.PORT || 3000;
 // front end
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(express.static(path.join(__dirname, '../client/dist')));
-app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../client/dist', 'index.html')));
+app.use(express.static(path.join(__dirname, '/var/www/mycurriculum/dist')));
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '/var/www/mycurriculum/dist', 'index.html')));
 
 app.listen(PORT, HOST, () => console.log(`Server running on http://${HOST}:${PORT}`));
