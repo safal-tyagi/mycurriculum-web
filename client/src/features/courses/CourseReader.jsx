@@ -86,6 +86,7 @@ const CourseReader = () => {
     setCurrentChapter(chapter);
     setCurrentSection(null);
     setSelectedSectionContent("");
+    toggleDrawer(false);
     // navigate(`/course/${courseId}/${chapterNumber}`);
   };
 
@@ -99,7 +100,7 @@ const CourseReader = () => {
 
     setCurrentSection(section);
     setSelectedSectionContent("");
-
+    toggleDrawer(false);
     //navigate(`/course/${courseId}/${chapterNumber}/${sectionNumber}`);
 
     if (section.content) {
@@ -310,7 +311,7 @@ const CourseReader = () => {
               }}
               sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
             >
-              {currentChapter.chapter_name}
+              {`${currentChapter.chapter_number}. ${currentChapter.chapter_name}`}
             </Link>
           )}
           {currentSection && (
@@ -318,14 +319,13 @@ const CourseReader = () => {
               color="textPrimary"
               sx={{ display: "flex", alignItems: "center" }}
             >
-              {currentSection.section_name}
+              {`${currentSection.section_number}. ${currentSection.section_name}`}
             </Typography>
           )}
         </Breadcrumbs>
         {(isCourseLoading || isAddingContent) && <CircularProgress />}
         {currentCourse && !currentChapter && !currentSection && (
           <Box>
-            <Typography variant="h5">{currentCourse.name}</Typography>
             <List>
               {currentCourse.chapters.map((chapter) => (
                 <ListItem
@@ -343,7 +343,6 @@ const CourseReader = () => {
         )}
         {currentChapter && !currentSection && (
           <Box>
-            <Typography variant="h5">{currentChapter.chapter_name}</Typography>
             <List>
               {currentChapter.sections.map((section) => (
                 <ListItem
@@ -365,7 +364,7 @@ const CourseReader = () => {
           </Box>
         )}
         {currentSection && (
-          <Grid container spacing={2} justifyContent="center">
+          <Grid container spacing={2}>
             <div className="markdown-body">
               <ReactMarkdown
                 children={selectedSectionContent}
