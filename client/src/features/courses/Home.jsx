@@ -42,7 +42,7 @@ const Home = () => {
 
   useEffect(() => {
     if (courseList) {
-      let filtered = courseList;
+      let filtered = [...courseList].sort((a, b) => a.name.localeCompare(b.name));
       // if (selectedCategory) {
       //   filtered = filtered.filter(course => course.category === selectedCategory);
       // }
