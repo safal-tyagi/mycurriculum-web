@@ -16,14 +16,24 @@ import {
   Breadcrumbs,
   Link,
   Collapse,
+  Button,
 } from "@mui/material";
-import { Menu, Home, Class, ExpandLess, ExpandMore } from "@mui/icons-material";
+import {
+  Menu,
+  Home,
+  Class,
+  ExpandLess,
+  ExpandMore,
+  ArrowBack,
+  ArrowForward,
+} from "@mui/icons-material";
 import { useGetCourseQuery, useAddContentGPTMutation } from "./coursesApi";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/a11y-dark.css";
 import "../../index.css";
+
 const CourseReader = () => {
   const { courseId } = useParams();
   const navigate = useNavigate();
@@ -108,6 +118,67 @@ const CourseReader = () => {
     setDrawerOpen(open);
   };
 
+  const navigateToPreviousSection = () => {
+    if (!currentSection || !currentChapter) return;
+    const currentChapterIndex = currentCourse.chapters.findIndex(
+      (ch) => ch.chapter_number === currentChapter.chapter_number
+    );
+    const currentSectionIndex = currentChapter.sections.findIndex(
+      (sec) => sec.section_number === currentSection.section_number
+    );
+
+    if (currentSectionIndex > 0) {
+      handleSectionClick(
+        currentChapter.chapter_number,
+        currentChapter.sections[currentSectionIndex - 1].section_number
+      );
+    } else if (currentChapterIndex > 0) {
+      const previousChapter = currentCourse.chapters[currentChapterIndex - 1];
+      handleSectionClick(
+        previousChapter.chapter_number,
+        previousChapter.sections[previousChapter.sections.length - 1]
+          .section_number
+      );
+    }
+  };
+
+  const navigateToNextSection = () => {
+    if (!currentSection || !currentChapter) return;
+    const currentChapterIndex = currentCourse.chapters.findIndex(
+      (ch) => ch.chapter_number === currentChapter.chapter_number
+    );
+    const currentSectionIndex = currentChapter.sections.findIndex(
+      (sec) => sec.section_number === currentSection.section_number
+    );
+
+    if (currentSectionIndex < currentChapter.sections.length - 1) {
+      handleSectionClick(
+        currentChapter.chapter_number,
+        currentChapter.sections[currentSectionIndex + 1].section_number
+      );
+    } else if (currentChapterIndex < currentCourse.chapters.length - 1) {
+      const nextChapter = currentCourse.chapters[currentChapterIndex + 1];
+      handleSectionClick(
+        nextChapter.chapter_number,
+        nextChapter.sections[0].section_number
+      );
+    }
+  };
+
+  const isFirstSection =
+    currentChapter &&
+    currentSection &&
+    currentCourse.chapters[0].chapter_number ===
+      currentChapter.chapter_number &&
+    currentChapter.sections[0].section_number === currentSection.section_number;
+  const isLastSection =
+    currentChapter &&
+    currentSection &&
+    currentCourse.chapters[currentCourse.chapters.length - 1].chapter_number ===
+      currentChapter.chapter_number &&
+    currentChapter.sections[currentChapter.sections.length - 1]
+      .section_number === currentSection.section_number;
+
   return (
     <Box>
       <AppBar position="fixed">
@@ -129,7 +200,7 @@ const CourseReader = () => {
         anchor="left"
         open={drawerOpen}
         onClose={() => toggleDrawer(false)}
-        classes={{ paper: 'drawer' }}
+        classes={{ paper: "drawer" }}
       >
         <List>
           {currentCourse &&
@@ -141,7 +212,7 @@ const CourseReader = () => {
                 >
                   <ListItemText
                     primary={`${chapter.chapter_number}. ${chapter.chapter_name}`}
-                    classes={{ primary: 'list-item-text' }}
+                    classes={{ primary: "list-item-text" }}
                   />
                   {currentChapter &&
                   currentChapter.chapter_number === chapter.chapter_number ? (
@@ -172,7 +243,7 @@ const CourseReader = () => {
                       >
                         <ListItemText
                           primary={`${section.section_number}. ${section.section_name}`}
-                          classes={{ primary: 'list-item-text' }}
+                          classes={{ primary: "list-item-text" }}
                         />
                       </ListItem>
                     ))}
@@ -233,7 +304,9 @@ const CourseReader = () => {
                   key={chapter.chapter_number}
                   onClick={() => handleChapterClick(chapter.chapter_number)}
                 >
-                  <ListItemText primary={`${chapter.chapter_number}. ${chapter.chapter_name}`} />
+                  <ListItemText
+                    primary={`${chapter.chapter_number}. ${chapter.chapter_name}`}
+                  />
                 </ListItem>
               ))}
             </List>
@@ -254,7 +327,9 @@ const CourseReader = () => {
                     )
                   }
                 >
-                  <ListItemText primary={`${section.section_number}. ${section.section_name}`} />
+                  <ListItemText
+                    primary={`${section.section_number}. ${section.section_name}`}
+                  />
                 </ListItem>
               ))}
             </List>
@@ -269,6 +344,24 @@ const CourseReader = () => {
                 rehypePlugins={[rehypeHighlight]}
               />
             </div>
+            <Grid container justifyContent="space-between" sx={{ marginY: 2 }}>
+              <Button
+                variant="contained"
+                onClick={navigateToPreviousSection}
+                disabled={isFirstSection}
+                startIcon={<ArrowBack />}
+              >
+                Previous
+              </Button>
+              <Button
+                variant="contained"
+                onClick={navigateToNextSection}
+                disabled={isLastSection}
+                endIcon={<ArrowForward />}
+              >
+                Next
+              </Button>
+            </Grid>
           </Grid>
         )}
       </Container>
