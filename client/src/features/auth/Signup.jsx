@@ -1,5 +1,13 @@
-import React from 'react';
-import { TextField, Button, Container, Typography, Grid, Checkbox, FormControlLabel } from '@mui/material';
+import React from "react";
+import {
+  TextField,
+  Button,
+  Container,
+  Typography,
+  Grid,
+  Checkbox,
+  FormControlLabel,
+} from "@mui/material";
 
 const Signup = () => {
   return (
@@ -17,11 +25,23 @@ const Signup = () => {
             <TextField label="Username" variant="outlined" fullWidth />
           </Grid>
           <Grid item xs={12}>
-            <TextField label="Password" type="password" variant="outlined" fullWidth />
+            <TextField
+              label="Password"
+              type="password"
+              variant="outlined"
+              fullWidth
+            />
           </Grid>
           {/* Continue adding other fields in a similar manner */}
         </Grid>
-        <Button type="submit" variant="contained" fullWidth style={{ marginTop: '1rem' }}>Signup</Button>
+        <Button
+          type="submit"
+          variant="contained"
+          fullWidth
+          style={{ marginTop: "1rem" }}
+        >
+          Signup
+        </Button>
       </form>
     </Container>
   );
