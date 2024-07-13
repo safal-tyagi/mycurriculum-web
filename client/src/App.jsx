@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
+  Link as RouterLink,
 } from "react-router-dom";
 import {
   Container,
@@ -22,18 +22,22 @@ const App = () => {
     <Router>
       <AppBar position="fixed">
         <Toolbar sx={{ width: "100%" }}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            component={Link}
+          <RouterLink
             to="/"
-            sx={{ textDecoration: "none", color: "inherit" }}
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
-            <Class sx={{ mr: 2 }} />
+            <IconButton edge="start" color="inherit">
+              <Class sx={{ mr: 2 }} />
+            </IconButton>
             <Typography variant="h6" component="div">
               My Curriculum
             </Typography>
-          </IconButton>
+          </RouterLink>
         </Toolbar>
       </AppBar>
       <Toolbar />
@@ -51,8 +55,14 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/course/:courseId" element={<CourseReader />} />
-            <Route path="/course/:courseId/:chapterNumber" element={<CourseReader />} />
-            <Route path="/course/:courseId/:chapterNumber/:sectionNumber" element={<CourseReader />} />
+            <Route
+              path="/course/:courseId/:chapterNumber"
+              element={<CourseReader />}
+            />
+            <Route
+              path="/course/:courseId/:chapterNumber/:sectionNumber"
+              element={<CourseReader />}
+            />
           </Routes>
         </Container>
       </Box>

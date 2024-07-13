@@ -152,14 +152,14 @@ const CourseReader = () => {
 
   const navigateToPreviousSection = () => {
     if (!currentSection || !currentChapter) return;
-  
+
     const currentChapterIndex = currentCourse.chapters.findIndex(
       (ch) => ch.chapter_number === currentChapter.chapter_number
     );
     const currentSectionIndex = currentChapter.sections.findIndex(
       (sec) => sec.section_number === currentSection.section_number
     );
-  
+
     if (currentSectionIndex > 0) {
       handleSectionClick(
         currentChapter.chapter_number,
@@ -183,18 +183,17 @@ const CourseReader = () => {
     }
     window.scrollTo(0, 0);
   };
-  
 
   const navigateToNextSection = () => {
     if (!currentSection || !currentChapter) return;
-  
+
     const currentChapterIndex = currentCourse.chapters.findIndex(
       (ch) => ch.chapter_number === currentChapter.chapter_number
     );
     const currentSectionIndex = currentChapter.sections.findIndex(
       (sec) => sec.section_number === currentSection.section_number
     );
-  
+
     if (currentSectionIndex < currentChapter.sections.length - 1) {
       handleSectionClick(
         currentChapter.chapter_number,
@@ -205,7 +204,7 @@ const CourseReader = () => {
 
       setCurrentChapter(nextChapter);
       setCurrentSection(nextChapter.sections[0]);
-  
+
       setTimeout(() => {
         handleSectionClick(
           nextChapter.chapter_number,
@@ -215,7 +214,6 @@ const CourseReader = () => {
     }
     window.scrollTo(0, 0);
   };
-  
 
   const isFirstSection =
     currentChapter &&
@@ -242,18 +240,22 @@ const CourseReader = () => {
           >
             <Menu />
           </IconButton>
-          <IconButton
-            edge="start"
-            color="inherit"
-            component={Link}
+          <RouterLink
             to="/"
-            sx={{ textDecoration: "none", color: "inherit" }}
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
-            <Class sx={{ mr: 2 }} />
+            <IconButton edge="start" color="inherit">
+              <Class sx={{ mr: 2 }} />
+            </IconButton>
             <Typography variant="h6" component="div">
               My Curriculum
             </Typography>
-          </IconButton>
+          </RouterLink>
         </Toolbar>
       </AppBar>
       <Drawer
