@@ -118,14 +118,14 @@ const Home = () => {
         </FormControl>
       </div>
 
-      {!courseExists && (
+      { selectedCourse && selectedLevel && !courseExists && (
         <Button variant="contained" color="primary" onClick={handleFetchCourse}>
           Generate Course
         </Button>
       )}
 
       {(isLoading || isCreating) && <CircularProgress />}
-      <h3>Courses</h3>
+      <Typography variant="h5">Courses</Typography>
       <Grid container spacing={4}>
         {filteredCourses &&
           filteredCourses.map((course) => (

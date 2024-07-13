@@ -129,6 +129,7 @@ const CourseReader = () => {
         anchor="left"
         open={drawerOpen}
         onClose={() => toggleDrawer(false)}
+        classes={{ paper: 'drawer' }}
       >
         <List>
           {currentCourse &&
@@ -140,6 +141,7 @@ const CourseReader = () => {
                 >
                   <ListItemText
                     primary={`${chapter.chapter_number}. ${chapter.chapter_name}`}
+                    classes={{ primary: 'list-item-text' }}
                   />
                   {currentChapter &&
                   currentChapter.chapter_number === chapter.chapter_number ? (
@@ -170,6 +172,7 @@ const CourseReader = () => {
                       >
                         <ListItemText
                           primary={`${section.section_number}. ${section.section_name}`}
+                          classes={{ primary: 'list-item-text' }}
                         />
                       </ListItem>
                     ))}
@@ -230,7 +233,7 @@ const CourseReader = () => {
                   key={chapter.chapter_number}
                   onClick={() => handleChapterClick(chapter.chapter_number)}
                 >
-                  <ListItemText primary={chapter.chapter_name} />
+                  <ListItemText primary={`${chapter.chapter_number}. ${chapter.chapter_name}`} />
                 </ListItem>
               ))}
             </List>
@@ -251,7 +254,7 @@ const CourseReader = () => {
                     )
                   }
                 >
-                  <ListItemText primary={section.section_name} />
+                  <ListItemText primary={`${section.section_number}. ${section.section_name}`} />
                 </ListItem>
               ))}
             </List>
