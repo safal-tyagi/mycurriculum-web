@@ -325,7 +325,7 @@ const CourseReader = () => {
         {(isCourseLoading || isAddingContent) && <CircularProgress />}
         {currentCourse && !currentChapter && !currentSection && (
           <Box>
-            <Typography variant="h5">Chapters</Typography>
+            <Typography variant="h5">{currentCourse.name}</Typography>
             <List>
               {currentCourse.chapters.map((chapter) => (
                 <ListItem
@@ -343,7 +343,7 @@ const CourseReader = () => {
         )}
         {currentChapter && !currentSection && (
           <Box>
-            <Typography variant="h5">Sections</Typography>
+            <Typography variant="h5">{currentChapter.chapter_name}</Typography>
             <List>
               {currentChapter.sections.map((section) => (
                 <ListItem
