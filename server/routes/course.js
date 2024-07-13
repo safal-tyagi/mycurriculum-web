@@ -2,9 +2,9 @@ import express from 'express';
 import { 
     getCourses, 
     getCourse,
-    createCourse, 
-    updateCourse, 
-    deleteCourse,
+    // createCourse, 
+    // updateCourse, 
+    // deleteCourse,
     createCourseGPT,
     addContentGPT,
     addCardImageGPT
