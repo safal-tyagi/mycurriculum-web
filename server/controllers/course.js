@@ -132,17 +132,6 @@ export const getCourse = async (req, res) => {
     }
 };
 
-export const createCourse = async (req, res) => {
-    try {
-        const course = new Course(req.body);
-        await course.save();
-        res.json(course);
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Server Error");
-    }
-};
-
 export const createCourseGPT = async (req, res) => {
     const { name, level } = req.body;
 
@@ -272,23 +261,34 @@ export const addContentGPT = async (req, res) => {
     }
   };
 
-export const updateCourse = async (req, res) => {
-    try {
-        const course = await Course.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        res.json(course);
-    }
-    catch (err) {
-        console.error(err);
-        res.status(500).send("Server Error");
-    }
-};
+// export const createCourse = async (req, res) => {
+//     try {
+//         const course = new Course(req.body);
+//         await course.save();
+//         res.json(course);
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).send("Server Error");
+//     }
+// };
 
-export const deleteCourse = async (req, res) => {
-    try {
-        await Course.findByIdAndDelete(req.params.id);
-        res.json({ msg: "Course deleted" });
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Server Error");
-    }
-};
+// export const updateCourse = async (req, res) => {
+//     try {
+//         const course = await Course.findByIdAndUpdate(req.params.id, req.body, { new: true });
+//         res.json(course);
+//     }
+//     catch (err) {
+//         console.error(err);
+//         res.status(500).send("Server Error");
+//     }
+// };
+
+// export const deleteCourse = async (req, res) => {
+//     try {
+//         await Course.findByIdAndDelete(req.params.id);
+//         res.json({ msg: "Course deleted" });
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).send("Server Error");
+//     }
+// };
