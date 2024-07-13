@@ -101,6 +101,7 @@ const CourseReader = () => {
         setCurrentCourse(updatedCourse);
         setSelectedSectionContent(result.data.content);
       }
+      window.scrollTo(0, 0); // Scroll to top of the page
     }
   };
 
@@ -140,6 +141,7 @@ const CourseReader = () => {
           .section_number
       );
     }
+    window.scrollTo(0, 0); // Scroll to top of the page
   };
 
   const navigateToNextSection = () => {
@@ -163,6 +165,7 @@ const CourseReader = () => {
         nextChapter.sections[0].section_number
       );
     }
+    window.scrollTo(0, 0); // Scroll to top of the page
   };
 
   const isFirstSection =
