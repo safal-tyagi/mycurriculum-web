@@ -152,13 +152,14 @@ const CourseReader = () => {
 
   const navigateToPreviousSection = () => {
     if (!currentSection || !currentChapter) return;
+  
     const currentChapterIndex = currentCourse.chapters.findIndex(
       (ch) => ch.chapter_number === currentChapter.chapter_number
     );
     const currentSectionIndex = currentChapter.sections.findIndex(
       (sec) => sec.section_number === currentSection.section_number
     );
-
+  
     if (currentSectionIndex > 0) {
       handleSectionClick(
         currentChapter.chapter_number,
@@ -166,24 +167,34 @@ const CourseReader = () => {
       );
     } else if (currentChapterIndex > 0) {
       const previousChapter = currentCourse.chapters[currentChapterIndex - 1];
-      handleSectionClick(
-        previousChapter.chapter_number,
+
+      setCurrentChapter(previousChapter);
+      setCurrentSection(
         previousChapter.sections[previousChapter.sections.length - 1]
-          .section_number
       );
+
+      setTimeout(() => {
+        handleSectionClick(
+          previousChapter.chapter_number,
+          previousChapter.sections[previousChapter.sections.length - 1]
+            .section_number
+        );
+      }, 0);
     }
     window.scrollTo(0, 0);
   };
+  
 
   const navigateToNextSection = () => {
     if (!currentSection || !currentChapter) return;
+  
     const currentChapterIndex = currentCourse.chapters.findIndex(
       (ch) => ch.chapter_number === currentChapter.chapter_number
     );
     const currentSectionIndex = currentChapter.sections.findIndex(
       (sec) => sec.section_number === currentSection.section_number
     );
-
+  
     if (currentSectionIndex < currentChapter.sections.length - 1) {
       handleSectionClick(
         currentChapter.chapter_number,
@@ -191,13 +202,20 @@ const CourseReader = () => {
       );
     } else if (currentChapterIndex < currentCourse.chapters.length - 1) {
       const nextChapter = currentCourse.chapters[currentChapterIndex + 1];
-      handleSectionClick(
-        nextChapter.chapter_number,
-        nextChapter.sections[0].section_number
-      );
+
+      setCurrentChapter(nextChapter);
+      setCurrentSection(nextChapter.sections[0]);
+  
+      setTimeout(() => {
+        handleSectionClick(
+          nextChapter.chapter_number,
+          nextChapter.sections[0].section_number
+        );
+      }, 0);
     }
     window.scrollTo(0, 0);
   };
+  
 
   const isFirstSection =
     currentChapter &&
