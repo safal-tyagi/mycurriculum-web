@@ -86,7 +86,7 @@ const CourseReader = () => {
     setCurrentChapter(chapter);
     setCurrentSection(null);
     setSelectedSectionContent("");
-    navigate(`/course/${courseId}/${chapterNumber}`);
+    // navigate(`/course/${courseId}/${chapterNumber}`);
   };
 
   const handleSectionClick = async (chapterNumber, sectionNumber) => {
@@ -100,7 +100,7 @@ const CourseReader = () => {
     setCurrentSection(section);
     setSelectedSectionContent("");
 
-    navigate(`/course/${courseId}/${chapterNumber}/${sectionNumber}`);
+    //navigate(`/course/${courseId}/${chapterNumber}/${sectionNumber}`);
 
     if (section.content) {
       setSelectedSectionContent(section.content);
