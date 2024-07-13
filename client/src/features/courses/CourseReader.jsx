@@ -35,7 +35,7 @@ import "highlight.js/styles/a11y-dark.css";
 import "../../index.css";
 
 const CourseReader = () => {
-  const { courseId } = useParams();
+  const { courseId, chapterNumber, sectionNumber } = useParams();
   const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [currentCourse, setCurrentCourse] = useState(null);
@@ -50,11 +50,34 @@ const CourseReader = () => {
   useEffect(() => {
     if (courseContent && courseContent.chapters.length > 0) {
       setCurrentCourse(courseContent);
-      setCurrentChapter(null);
-      setCurrentSection(null);
-      setSelectedSectionContent("");
+
+      if (chapterNumber) {
+        const chapter = courseContent.chapters.find(
+          (ch) => ch.chapter_number === parseInt(chapterNumber)
+        );
+        setCurrentChapter(chapter);
+
+        if (sectionNumber) {
+          const section = chapter.sections.find(
+            (sec) => sec.section_number === parseFloat(sectionNumber)
+          );
+          setCurrentSection(section);
+          if (section.content) {
+            setSelectedSectionContent(section.content);
+          } else {
+            handleSectionClick(chapter.chapter_number, section.section_number);
+          }
+        } else {
+          setCurrentSection(null);
+          setSelectedSectionContent("");
+        }
+      } else {
+        setCurrentChapter(null);
+        setCurrentSection(null);
+        setSelectedSectionContent("");
+      }
     }
-  }, [courseContent]);
+  }, [courseContent, chapterNumber, sectionNumber]);
 
   const handleChapterClick = (chapterNumber) => {
     const chapter = currentCourse.chapters.find(
@@ -63,6 +86,7 @@ const CourseReader = () => {
     setCurrentChapter(chapter);
     setCurrentSection(null);
     setSelectedSectionContent("");
+    navigate(`/course/${courseId}/${chapterNumber}`);
   };
 
   const handleSectionClick = async (chapterNumber, sectionNumber) => {
@@ -76,6 +100,8 @@ const CourseReader = () => {
     setCurrentSection(section);
     setSelectedSectionContent("");
 
+    navigate(`/course/${courseId}/${chapterNumber}/${sectionNumber}`);
+
     if (section.content) {
       setSelectedSectionContent(section.content);
     } else {
@@ -85,7 +111,6 @@ const CourseReader = () => {
         sectionNumber,
       });
       if (result.data) {
-        // Update the section content in the course state
         const updatedSections = chapter.sections.map((sec) =>
           sec.section_number === sectionNumber
             ? { ...sec, content: result.data.content }
@@ -101,8 +126,8 @@ const CourseReader = () => {
         setCurrentCourse(updatedCourse);
         setSelectedSectionContent(result.data.content);
       }
-      window.scrollTo(0, 0); // Scroll to top of the page
     }
+    window.scrollTo(0, 0);
   };
 
   const handleHomeClick = () => {
@@ -113,6 +138,7 @@ const CourseReader = () => {
     setCurrentChapter(null);
     setCurrentSection(null);
     setSelectedSectionContent("");
+    navigate(`/course/${courseId}`);
   };
 
   const toggleDrawer = (open) => {
@@ -141,7 +167,7 @@ const CourseReader = () => {
           .section_number
       );
     }
-    window.scrollTo(0, 0); // Scroll to top of the page
+    window.scrollTo(0, 0);
   };
 
   const navigateToNextSection = () => {
@@ -165,7 +191,7 @@ const CourseReader = () => {
         nextChapter.sections[0].section_number
       );
     }
-    window.scrollTo(0, 0); // Scroll to top of the page
+    window.scrollTo(0, 0);
   };
 
   const isFirstSection =
