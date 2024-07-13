@@ -30,9 +30,13 @@ import {
 import { useGetCourseQuery, useAddContentGPTMutation } from "./coursesApi";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 import rehypeHighlight from "rehype-highlight";
+import rehypeKatex from "rehype-katex";
 import "highlight.js/styles/a11y-dark.css";
+import "katex/dist/katex.min.css";
 import "../../index.css";
+import { preprocessMarkdown } from "../../helpers";
 
 const CourseReader = () => {
   const { courseId, chapterNumber, sectionNumber } = useParams();
@@ -87,7 +91,7 @@ const CourseReader = () => {
     setCurrentSection(null);
     setSelectedSectionContent("");
     toggleDrawer(false);
-    // navigate(`/course/${courseId}/${chapterNumber}`);
+    navigate(`/course/${courseId}/${chapterNumber}`);
   };
 
   const handleSectionClick = async (chapterNumber, sectionNumber) => {
@@ -101,7 +105,7 @@ const CourseReader = () => {
     setCurrentSection(section);
     setSelectedSectionContent("");
     toggleDrawer(false);
-    //navigate(`/course/${courseId}/${chapterNumber}/${sectionNumber}`);
+    navigate(`/course/${courseId}/${chapterNumber}/${sectionNumber}`);
 
     if (section.content) {
       setSelectedSectionContent(section.content);
@@ -220,10 +224,18 @@ const CourseReader = () => {
           >
             <Menu />
           </IconButton>
-          <Class sx={{ mr: 2 }} />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            My Curriculum
-          </Typography>
+          <IconButton
+            edge="start"
+            color="inherit"
+            component={Link}
+            to="/"
+            sx={{ textDecoration: "none", color: "inherit" }}
+          >
+            <Class sx={{ mr: 2 }} />
+            <Typography variant="h6" component="div">
+              My Curriculum
+            </Typography>
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -367,9 +379,9 @@ const CourseReader = () => {
           <Grid container spacing={2}>
             <div className="markdown-body">
               <ReactMarkdown
-                children={selectedSectionContent}
-                remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeHighlight]}
+                children={preprocessMarkdown(selectedSectionContent)}
+                remarkPlugins={[remarkGfm, remarkMath]}
+                rehypePlugins={[rehypeHighlight, rehypeKatex]}
               />
             </div>
             <Grid container justifyContent="space-between" sx={{ marginY: 2 }}>

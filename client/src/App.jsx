@@ -1,6 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Container, AppBar, Toolbar, Typography, Box } from "@mui/material";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
+import {
+  Container,
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
+  IconButton,
+} from "@mui/material";
 import { Class } from "@mui/icons-material";
 import Home from "./features/courses/Home";
 import CourseReader from "./features/courses/CourseReader";
@@ -10,10 +22,18 @@ const App = () => {
     <Router>
       <AppBar position="fixed">
         <Toolbar sx={{ width: "100%" }}>
-          <Class sx={{ mr: 2 }} />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            My Curriculum
-          </Typography>
+          <IconButton
+            edge="start"
+            color="inherit"
+            component={Link}
+            to="/"
+            sx={{ textDecoration: "none", color: "inherit" }}
+          >
+            <Class sx={{ mr: 2 }} />
+            <Typography variant="h6" component="div">
+              My Curriculum
+            </Typography>
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Toolbar />
@@ -31,6 +51,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/course/:courseId" element={<CourseReader />} />
+            <Route path="/course/:courseId/:chapterNumber" element={<CourseReader />} />
+            <Route path="/course/:courseId/:chapterNumber/:sectionNumber" element={<CourseReader />} />
           </Routes>
         </Container>
       </Box>
