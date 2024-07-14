@@ -17,37 +17,34 @@ export const EDUCATION_LEVEL = [
 
 export const COURSE_LEVELS = ["Beginner", "Intermediate", "Advanced"];
 
-export const COURSE_STATUSES = ["In-Progress", "Completed"];
+export const COURSE_STATUSES = ["Enrolled", "In-Progress", "Completed"];
 
 export const CATEGORIES = {
-  "Computer Science": [
-    "Data Structures and Algorithms",
-    "Programming Languages",
-    "Computer Networking",
-    "Operating Systems",
-    "Databases",
-    "Frontend Development",
-    "Backend Development",
+  "Technology": [
+    "Computer Science",
+    "Information Technology",
+    "Software Development",
+    "Web Development",
     "Mobile Development",
     "Game Development",
-    "Software Engineering",
     "Data Science",
     "Artificial Intelligence",
+    "Machine Learning",
     "Cybersecurity",
+    "Network Security",
+    "Cloud Computing",
+    "DevOps",
+    "Systems Administration",
+    "Database Administration",
+    "IT Management",
+    "IT Leadership",
+    "IT Project Management",
+    "IT Business Analysis",
+    "IT Sales",
+    "IT Marketing",
+    "IT Writing",
   ],
-  "Arts & Crafts": [
-    "Drawing",
-    "Painting",
-    "Sculpting",
-    "Photography",
-    "Music",
-    "Dance",
-    "Theater",
-    "Writing",
-    "Fashion",
-    "Culinary",
-  ],
-  Business: [
+  "Business": [
     "Entrepreneurship",
     "Marketing",
     "Finance",
@@ -62,7 +59,19 @@ export const CATEGORIES = {
     "Customer Service",
     "Business Communication",
   ],
-  Culinary: [
+  "Arts & Crafts": [
+    "Drawing",
+    "Painting",
+    "Sculpting",
+    "Photography",
+    "Music",
+    "Dance",
+    "Theater",
+    "Writing",
+    "Fashion",
+    "Culinary",
+  ],
+  "Culinary": [
     "Baking",
     "Cooking",
     "Mixology",
@@ -70,7 +79,7 @@ export const CATEGORIES = {
     "Food Styling",
     "Food Writing",
   ],
-  Design: [
+  "Design": [
     "Graphic Design",
     "Web Design",
     "UI/UX Design",
@@ -82,7 +91,7 @@ export const CATEGORIES = {
     "Animation",
     "Illustration",
   ],
-  Education: [
+  "Education": [
     "Early Childhood Education",
     "Elementary Education",
     "Secondary Education",
@@ -95,7 +104,7 @@ export const CATEGORIES = {
     "Educational Leadership",
     "Educational Administration",
   ],
-  Fashion: [
+  "Fashion": [
     "Fashion Design",
     "Fashion Styling",
     "Fashion Photography",
@@ -103,7 +112,7 @@ export const CATEGORIES = {
     "Fashion Business",
     "Fashion Marketing",
   ],
-  Finance: [
+  "Finance": [
     "Personal Finance",
     "Investing",
     "Retirement Planning",
@@ -151,7 +160,7 @@ export const CATEGORIES = {
     "Audiology",
     "Dentistry",
   ],
-  Language: [
+  "Language": [
     "Spanish",
     "French",
     "German",
@@ -163,7 +172,7 @@ export const CATEGORIES = {
     "Russian",
     "Arabic",
   ],
-  Music: [
+  "Music": [
     "Piano",
     "Guitar",
     "Violin",
@@ -187,7 +196,7 @@ export const CATEGORIES = {
     "Music Business",
     "Music Education",
   ],
-  Photography: [
+  "Photography": [
     "Landscape Photography",
     "Portrait Photography",
     "Event Photography",
@@ -218,31 +227,7 @@ export const CATEGORIES = {
     "Photography Sales",
     "Photography Writing",
   ],
-  Technology: [
-    "Computer Science",
-    "Information Technology",
-    "Software Development",
-    "Web Development",
-    "Mobile Development",
-    "Game Development",
-    "Data Science",
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Cybersecurity",
-    "Network Security",
-    "Cloud Computing",
-    "DevOps",
-    "Systems Administration",
-    "Database Administration",
-    "IT Management",
-    "IT Leadership",
-    "IT Project Management",
-    "IT Business Analysis",
-    "IT Sales",
-    "IT Marketing",
-    "IT Writing",
-  ],
-  Writing: [
+  "Writing": [
     "Creative Writing",
     "Fiction Writing",
     "Nonfiction Writing",

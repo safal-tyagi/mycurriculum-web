@@ -1,6 +1,7 @@
 import { extractJSON } from "../helpers.js";
 import Course from "../models/course.js";
 import OpenAI from "openai";
+import sharp from "sharp";
 
 const openai = new OpenAI({ apiKey: `${process.env.OPENAI_API_KEY}` });
 
@@ -189,6 +190,8 @@ export const addCardImageGPT = async (req, res) => {
         });
 
         const courseCardImage = response.data[0].b64_json;
+
+        // const compressedImage = sharp(Buffer.from(courseCardImage, 'base64'))
         course.card_image = courseCardImage;
 
         await course.save();

@@ -1,4 +1,6 @@
 export const preprocessMarkdown = (content) => {
+    if (!content) { return ""; }
+    
     // Regular expression to identify inline LaTeX equations within \( ... \)
     const inlineLatexRegex = /\\\(([^()]+)\\\)/g;
   

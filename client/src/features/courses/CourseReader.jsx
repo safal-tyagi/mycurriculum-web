@@ -50,6 +50,7 @@ const CourseReader = () => {
   const [addContentGPT, { isLoading: isAddingContent }] =
     useAddContentGPTMutation();
   const [selectedSectionContent, setSelectedSectionContent] = useState("");
+  const [contentKey, setContentKey] = useState(0); // To force re-render
 
   useEffect(() => {
     if (courseContent && courseContent.chapters.length > 0) {
@@ -68,6 +69,7 @@ const CourseReader = () => {
           setCurrentSection(section);
           if (section.content) {
             setSelectedSectionContent(section.content);
+            setContentKey((prevKey) => prevKey + 1); // Force re-render
           } else {
             handleSectionClick(chapter.chapter_number, section.section_number);
           }
@@ -104,11 +106,14 @@ const CourseReader = () => {
 
     setCurrentSection(section);
     setSelectedSectionContent("");
+
     toggleDrawer(false);
+
     navigate(`/course/${courseId}/${chapterNumber}/${sectionNumber}`);
 
     if (section.content) {
       setSelectedSectionContent(section.content);
+      setContentKey((prevKey) => prevKey + 1); // Force re-render
     } else {
       const result = await addContentGPT({
         courseId,
@@ -129,7 +134,11 @@ const CourseReader = () => {
         const updatedCourse = { ...currentCourse, chapters: updatedChapters };
 
         setCurrentCourse(updatedCourse);
+        setCurrentSection(
+          updatedSections.find((sec) => sec.section_number === sectionNumber)
+        );
         setSelectedSectionContent(result.data.content);
+        setContentKey((prevKey) => prevKey + 1); // Force re-render
       }
     }
     window.scrollTo(0, 0);
@@ -399,6 +408,7 @@ const CourseReader = () => {
           <Grid container spacing={2}>
             <div className="markdown-body">
               <ReactMarkdown
+                key={contentKey} // Force re-render
                 children={preprocessMarkdown(selectedSectionContent)}
                 remarkPlugins={[remarkGfm, remarkMath]}
                 rehypePlugins={[rehypeHighlight, rehypeKatex]}
