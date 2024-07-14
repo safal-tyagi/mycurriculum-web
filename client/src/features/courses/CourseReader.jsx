@@ -402,6 +402,18 @@ const CourseReader = () => {
                 children={preprocessMarkdown(selectedSectionContent)}
                 remarkPlugins={[remarkGfm, remarkMath]}
                 rehypePlugins={[rehypeHighlight, rehypeKatex]}
+                components={{
+                  math: ({ value }) => (
+                    <div className="scrollable-latex">
+                      <math>{value}</math>
+                    </div>
+                  ),
+                  inlineMath: ({ value }) => (
+                    <span className="scrollable-latex">
+                      <math>{value}</math>
+                    </span>
+                  ),
+                }}
               />
             </div>
             <Grid container justifyContent="space-between" sx={{ marginY: 2 }}>

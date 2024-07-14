@@ -137,6 +137,12 @@ button:focus-visible {
   overflow: auto;
 }
 
+.markdown-body .katex {
+  overflow: auto;
+  white-space: pre-wrap; /* Keeps the white spaces and breaks the lines */
+  word-break: break-word; /* Breaks long words to fit the container */
+}
+
 .markdown-body pre code {
   background: none;
   /* Remove inline code background inside pre */
@@ -144,7 +150,10 @@ button:focus-visible {
   /* Inherit color from pre */
 }
 
-
+.scrollable-latex {
+  overflow: auto;
+  display: block;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
