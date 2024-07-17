@@ -1,0 +1,896 @@
+Technology
+    Artificial Intelligence
+      Generative AI
+        What is Generative AI? (Beginner)
+        Introduction to Prompt Engineering (Beginner)
+        Generative AI Applications (Intermediate)
+        Advanced Generative Models (Advanced)
+        Ethical Considerations in Generative AI (Advanced)
+      Machine Learning
+        Introduction to Machine Learning (Beginner)
+        Machine Learning for Beginners (Beginner)
+        Supervised Learning Techniques (Intermediate)
+        Unsupervised Learning Techniques (Intermediate)
+        Reinforcement Learning (Advanced)
+        Deep Learning Fundamentals (Intermediate)
+        Advanced Neural Networks (Advanced)
+        Machine Learning Model Deployment (Intermediate)
+        Ethics in Machine Learning (Intermediate)
+        AI and Machine Learning in Healthcare (Intermediate)
+        
+    Web Development
+      Frontend Development
+        Introduction to HTML (Beginner)
+        Introduction to CSS (Beginner)
+        JavaScript for Beginners (Beginner)
+        Advanced CSS Techniques (Intermediate)
+        React.js Essentials (Intermediate)
+        Vue.js Fundamentals (Intermediate)
+        Building Progressive Web Apps (Advanced)
+        Responsive Web Design (Intermediate)
+        Web Accessibility (Intermediate)
+        State Management with Redux (Advanced)
+      Backend Development
+        Introduction to Node.js (Beginner)
+        Introduction to Express.js (Beginner)
+        Building RESTful APIs (Intermediate)
+        Authentication and Authorization (Intermediate)
+        Database Integration with MongoDB (Intermediate)
+        Advanced Node.js Concepts (Advanced)
+        Microservices Architecture (Advanced)
+        GraphQL Fundamentals (Intermediate)
+        Serverless Architecture (Advanced)
+        Secure Coding Practices (Advanced)
+        
+    Data Science
+      Data Analysis
+        Data Analysis with Python (Beginner)
+        Data Analysis with R (Beginner)
+        Excel for Data Analysis (Beginner)
+        Statistical Analysis (Intermediate)
+        Advanced Data Analysis Techniques (Advanced)
+        Data Cleaning and Preprocessing (Intermediate)
+        Exploratory Data Analysis (Intermediate)
+        Data Analysis with SQL (Intermediate)
+        Time Series Analysis (Advanced)
+        Data Analysis for Business (Intermediate)
+      Data Visualization
+        Introduction to Data Visualization (Beginner)
+        Data Visualization with Tableau (Beginner)
+        Data Visualization with Power BI (Beginner)
+        Advanced Data Visualization Techniques (Intermediate)
+        Data Storytelling (Intermediate)
+        Interactive Data Visualization with D3.js (Advanced)
+        Dashboard Design Principles (Intermediate)
+        Data Visualization with Python (Intermediate)
+        Data Visualization for Business Intelligence (Intermediate)
+        Infographics Design (Intermediate)
+      Big Data
+        Introduction to Big Data (Beginner)
+        Big Data Analytics (Beginner)
+        Hadoop Fundamentals (Intermediate)
+        Spark for Big Data (Intermediate)
+        NoSQL Databases (Intermediate)
+        Data Warehousing (Intermediate)
+        Big Data in Cloud (Advanced)
+        Real-Time Data Processing (Advanced)
+        Big Data Security (Advanced)
+        Big Data Case Studies (Intermediate)
+    
+    Cybersecurity
+      Network Security
+        Basics of Network Security (Beginner)
+        Network Security with Firewalls (Beginner)
+        Network Monitoring and Defense (Intermediate)
+        Network Security Best Practices (Intermediate)
+        Advanced Network Security (Advanced)
+        Intrusion Detection Systems (Intermediate)
+        Network Penetration Testing (Advanced)
+        Wireless Network Security (Intermediate)
+        Securing Network Devices (Intermediate)
+        Network Security Certifications (Intermediate)
+      Information Security
+        Information Security Fundamentals (Beginner)
+        Introduction to Ethical Hacking (Beginner)
+        Information Security Management (Intermediate)
+        Risk Management in Information Security (Intermediate)
+        Incident Response and Management (Intermediate)
+        Cryptography Basics (Intermediate)
+        Advanced Cryptography (Advanced)
+        Compliance and Legal Issues in Information Security (Intermediate)
+        Cloud Security (Advanced)
+        Information Security Certifications (Intermediate)
+    
+    Cloud Computing
+      AWS
+        Introduction to AWS (Beginner)
+        AWS Solutions Architect (Beginner)
+        AWS Certified Developer (Intermediate)
+        AWS Security Essentials (Intermediate)
+        AWS Data Engineering (Advanced)
+        AWS Machine Learning (Advanced)
+        AWS Serverless Applications (Advanced)
+        AWS Cost Management (Intermediate)
+        AWS DevOps (Advanced)
+        AWS Certifications (Intermediate)
+      Azure
+        Introduction to Azure (Beginner)
+        Azure Fundamentals (Beginner)
+        Azure DevOps (Intermediate)
+        Azure Security (Intermediate)
+        Azure Data Engineering (Advanced)
+        Azure AI and Machine Learning (Advanced)
+        Azure Kubernetes Services (Advanced)
+        Azure Serverless Computing (Advanced)
+        Azure Cost Management (Intermediate)
+        Azure Certifications (Intermediate)
+        
+    DevOps
+      Continuous Integration
+        Introduction to Continuous Integration (Beginner)
+        Continuous Integration with Jenkins (Beginner)
+        Advanced Jenkins Techniques (Intermediate)
+        CI/CD Pipeline Design (Intermediate)
+        CI/CD with GitHub Actions (Intermediate)
+        Testing Automation in CI/CD (Intermediate)
+        Continuous Integration with Azure DevOps (Intermediate)
+        CI/CD for Microservices (Advanced)
+        Security in CI/CD (Advanced)
+        CI/CD Tools Comparison (Intermediate)
+      Continuous Deployment
+        Introduction to Continuous Deployment (Beginner)
+        Continuous Deployment with Docker (Beginner)
+        Advanced Docker Techniques (Intermediate)
+        Kubernetes for Continuous Deployment (Intermediate)
+        Continuous Deployment with AWS (Intermediate)
+        Advanced Kubernetes Deployment Strategies (Advanced)
+        Helm for Kubernetes (Advanced)
+        Blue-Green Deployment (Intermediate)
+        Canary Deployment (Intermediate)
+        Continuous Deployment Best Practices (Advanced)
+
+
+
+Business
+  Entrepreneurship
+    Startups
+      Introduction to Startups (Beginner)
+      Startup Funding Strategies (Intermediate)
+      Lean Startup Methodology (Intermediate)
+      Building a Startup Team (Intermediate)
+      Scaling Startups (Advanced)
+      Startup Legal Essentials (Intermediate)
+      Startup Marketing (Intermediate)
+      Product Development for Startups (Intermediate)
+      Startup Failures and Lessons (Advanced)
+      Startup Pitching Techniques (Intermediate)
+    Business Planning
+      Business Plan Basics (Beginner)
+      Writing a Business Plan (Beginner)
+      Strategic Business Planning (Intermediate)
+      Financial Planning for Businesses (Intermediate)
+      Business Model Canvas (Intermediate)
+      Market Research for Business Planning (Intermediate)
+      Risk Management in Business Planning (Intermediate)
+      Business Planning for Growth (Advanced)
+      Business Planning Tools and Software (Intermediate)
+      Case Studies in Business Planning (Intermediate)
+  Marketing
+    Digital Marketing
+      Introduction to Digital Marketing (Beginner)
+      SEO Fundamentals (Beginner)
+      Social Media Marketing (Beginner)
+      Google Analytics (Intermediate)
+      Pay-Per-Click (PPC) Advertising (Intermediate)
+      Email Marketing (Intermediate)
+      Content Marketing (Intermediate)
+      Digital Marketing Strategy (Advanced)
+      Digital Marketing Analytics (Advanced)
+      Influencer Marketing (Intermediate)
+    Content Marketing
+      Introduction to Content Marketing (Beginner)
+      Blogging for Business (Beginner)
+      Video Content Marketing (Intermediate)
+      Content Creation Tools (Intermediate)
+      Content Strategy Development (Intermediate)
+      Advanced Content Marketing Techniques (Advanced)
+      Content Marketing Analytics (Intermediate)
+      Visual Content Marketing (Intermediate)
+      Storytelling in Content Marketing (Advanced)
+      Case Studies in Content Marketing (Intermediate)
+    Social Media Marketing
+      Introduction to Social Media Marketing (Beginner)
+      Facebook Marketing (Beginner)
+      Instagram Marketing (Beginner)
+      Twitter Marketing (Intermediate)
+      LinkedIn Marketing (Intermediate)
+      Social Media Advertising (Intermediate)
+      Social Media Strategy (Advanced)
+      Social Media Analytics (Advanced)
+      Social Media Content Creation (Intermediate)
+      Social Media Marketing Tools (Intermediate)
+
+
+  Finance
+    Personal Finance
+      Personal Finance Basics (Beginner)
+      Budgeting and Saving (Beginner)
+      Managing Debt (Intermediate)
+      Retirement Planning (Intermediate)
+      Investing for Beginners (Beginner)
+      Advanced Investing Techniques (Advanced)
+      Tax Planning (Intermediate)
+      Estate Planning (Advanced)
+      Personal Finance Software (Intermediate)
+      Financial Independence and Early Retirement (Advanced)
+    Corporate Finance
+      Introduction to Corporate Finance (Beginner)
+      Financial Statements Analysis (Intermediate)
+      Corporate Financial Planning (Intermediate)
+      Capital Budgeting (Intermediate)
+      Corporate Financing Decisions (Advanced)
+      Risk Management in Corporate Finance (Advanced)
+      Mergers and Acquisitions (Advanced)
+      Corporate Governance (Intermediate)
+      Corporate Finance Software (Intermediate)
+      Case Studies in Corporate Finance (Advanced)
+    Investing
+      Investing Basics (Beginner)
+      Stock Market Investing (Beginner)
+      Real Estate Investing (Intermediate)
+      Cryptocurrency Investing (Intermediate)
+      Mutual Funds and ETFs (Intermediate)
+      Value Investing (Advanced)
+      Technical Analysis (Intermediate)
+      Portfolio Management (Advanced)
+      Risk Management in Investing (Advanced)
+      Sustainable Investing (Intermediate)
+  
+  Management
+    Leadership
+      Introduction to Leadership (Beginner)
+      Leadership Styles (Beginner)
+      Effective Communication in Leadership (Intermediate)
+      Decision Making for Leaders (Intermediate)
+      Leading Teams (Intermediate)
+      Strategic Leadership (Advanced)
+      Emotional Intelligence in Leadership (Intermediate)
+      Conflict Resolution for Leaders (Intermediate)
+      Leadership Development Programs (Advanced)
+      Case Studies in Leadership (Intermediate)
+    Project Management
+      Introduction to Project Management (Beginner)
+      Project Management Tools (Beginner)
+      Agile Project Management (Intermediate)
+      Project Risk Management (Intermediate)
+      Project Scheduling and Planning (Intermediate)
+      Advanced Project Management Techniques (Advanced)
+      Project Management Certification Preparation (Intermediate)
+      Resource Management (Intermediate)
+      Project Management Case Studies (Advanced)
+      Project Management Software (Intermediate)
+
+
+Arts & Crafts
+  Visual Arts
+    Drawing
+      Basics of Drawing (Beginner)
+      Drawing with Pencils (Beginner)
+      Portrait Drawing (Intermediate)
+      Drawing Techniques and Styles (Intermediate)
+      Advanced Drawing Techniques (Advanced)
+      Drawing for Animation (Intermediate)
+      Drawing with Charcoal (Intermediate)
+      Digital Drawing (Advanced)
+      Drawing Animals and Nature (Intermediate)
+      Drawing for Beginners (Beginner)
+    Painting
+      Basics of Painting (Beginner)
+      Watercolor Painting (Beginner)
+      Oil Painting (Intermediate)
+      Acrylic Painting (Intermediate)
+      Abstract Painting (Advanced)
+      Landscape Painting (Intermediate)
+      Portrait Painting (Intermediate)
+      Digital Painting (Advanced)
+      Painting Techniques and Styles (Intermediate)
+      Painting for Beginners (Beginner)
+  Performing Arts
+    Music
+      Basics of Music Theory (Beginner)
+      Learning to Play the Piano (Beginner)
+      Learning to Play the Guitar (Beginner)
+      Singing Techniques (Intermediate)
+      Music Production (Intermediate)
+      Music Composition (Advanced)
+      Music Recording (Intermediate)
+      Digital Music Production (Advanced)
+      Advanced Music Theory (Intermediate)
+      Music for Beginners (Beginner)
+    Dance
+      Basics of Dance (Beginner)
+      Ballet Techniques (Beginner)
+      Hip Hop Dance (Intermediate)
+      Contemporary Dance (Intermediate)
+      Advanced Dance Techniques (Advanced)
+      Dance Choreography (Intermediate)
+      Dance for Fitness (Beginner)
+      Jazz Dance (Intermediate)
+      Dance Styles and Genres (Intermediate)
+      Dance for Beginners (Beginner)
+  Culinary Arts
+    Cooking
+      Basics of Cooking (Beginner)
+      Italian Cooking (Beginner)
+      Asian Cooking (Intermediate)
+      Advanced Cooking Techniques (Advanced)
+      Baking for Beginners (Beginner)
+      Healthy Cooking (Intermediate)
+      Cooking with Spices (Intermediate)
+      Vegetarian Cooking (Intermediate)
+      Gourmet Cooking (Advanced)
+      Cooking for Beginners (Beginner)
+    Baking
+      Basics of Baking (Beginner)
+      Bread Baking (Beginner)
+      Cake Decorating (Intermediate)
+      Pastry Baking (Intermediate)
+      Advanced Baking Techniques (Advanced)
+      Gluten-Free Baking (Intermediate)
+      Baking with Chocolate (Intermediate)
+      Vegan Baking (Intermediate)
+      Baking for Special Occasions (Intermediate)
+      Baking for Beginners (Beginner)
+  
+Design
+  Graphic Design
+    Basics
+    Introduction to Graphic Design (Beginner)
+    Graphic Design Principles (Beginner)
+    Typography Basics (Beginner)
+    Color Theory (Intermediate)
+    Advanced Graphic Design Techniques (Advanced)
+    Graphic Design Software (Intermediate)
+    Digital Illustration (Advanced)
+    Graphic Design for Print (Intermediate)
+    Branding and Identity Design (Intermediate)
+    Graphic Design Projects (Intermediate)
+  Tools
+    Adobe Photoshop Basics (Beginner)
+    Adobe Illustrator Basics (Beginner)
+    Advanced Photoshop Techniques (Intermediate)
+    Advanced Illustrator Techniques (Intermediate)
+    Graphic Design with InDesign (Intermediate)
+    Graphic Design with Canva (Beginner)
+    Digital Painting with Procreate (Intermediate)
+    Graphic Design with CorelDRAW (Intermediate)
+    Graphic Design with Affinity Designer (Intermediate)
+    Graphic Design Tools Overview (Beginner)
+  
+  Web Design
+    Basics
+      Introduction to Web Design (Beginner)
+      HTML and CSS for Web Design (Beginner)
+      Responsive Web Design (Intermediate)
+      Web Design Best Practices (Intermediate)
+      Advanced Web Design Techniques (Advanced)
+      Web Design Projects (Intermediate)
+      User Experience (UX) Design (Intermediate)
+      User Interface (UI) Design (Intermediate)
+      Web Accessibility (Intermediate)
+      Web Design Trends (Intermediate)
+    Tools
+      Web Design with Adobe XD (Beginner)
+      Web Design with Sketch (Beginner)
+      Advanced Adobe XD Techniques (Intermediate)
+      Advanced Sketch Techniques (Intermediate)
+      Web Design with Figma (Intermediate)
+      Prototyping with InVision (Intermediate)
+      Web Design with Axure RP (Intermediate)
+      Web Design with Webflow (Intermediate)
+      Web Design Tools Overview (Beginner)
+      Web Design Projects with Tools (Intermediate)
+
+  Fashion Design
+    Basics
+      Introduction to Fashion Design (Beginner)
+      Fashion Sketching (Beginner)
+      Fabric Selection and Textiles (Beginner)
+      Fashion Illustration (Intermediate)
+      Advanced Fashion Design Techniques (Advanced)
+      Fashion Design Software (Intermediate)
+      Fashion Trends Analysis (Intermediate)
+      Fashion Design for Different Body Types (Intermediate)
+      Sustainable Fashion Design (Intermediate)
+      Fashion Design Projects (Intermediate)
+    Entrepreneurship
+      Starting a Fashion Brand (Beginner)
+      Fashion Business Planning (Intermediate)
+      Fashion Marketing Strategies (Intermediate)
+      Fashion Production and Manufacturing (Intermediate)
+      Fashion Retail Management (Intermediate)
+      Fashion E-commerce (Intermediate)
+      Fashion Branding and Identity (Intermediate)
+      Fashion Sales Techniques (Intermediate)
+      Case Studies in Fashion Entrepreneurship (Advanced)
+      Fashion Business Tools and Software (Intermediate)
+
+Education
+  Early Childhood Education
+    Child Development
+      Basics of Child Development (Beginner)
+      Cognitive Development in Children (Beginner)
+      Emotional Development in Children (Intermediate)
+      Language Development in Children (Intermediate)
+      Social Development in Children (Intermediate)
+      Advanced Child Development Techniques (Advanced)
+      Child Development Theories (Intermediate)
+      Child Development Case Studies (Intermediate)
+      Child Development Projects (Intermediate)
+      Child Development Tools and Resources (Beginner)
+    Teaching Techniques
+      Basics of Teaching Techniques (Beginner)
+      Teaching Methods for Early Childhood (Beginner)
+      Classroom Management Techniques (Intermediate)
+      Teaching through Play (Intermediate)
+      Creative Teaching Techniques (Intermediate)
+      Advanced Teaching Techniques (Advanced)
+      Differentiated Instruction (Intermediate)
+      Teaching Techniques for Special Needs Children (Intermediate)
+      Teaching Techniques Case Studies (Intermediate)
+      Teaching Techniques Tools and Resources (Beginner)
+  Special Education
+    Inclusion Strategies
+      Basics of Inclusion Strategies (Beginner)
+      Inclusive Classroom Practices (Beginner)
+      Differentiated Instruction for Inclusion (Intermediate)
+      Collaborating with Families and Specialists (Intermediate)
+      Advanced Inclusion Strategies (Advanced)
+      Inclusion Strategies for Specific Disabilities (Intermediate)
+      Inclusion Strategies Case Studies (Intermediate)
+      Inclusion Strategies Projects (Intermediate)
+      Inclusion Strategies Tools and Resources (Beginner)
+    Support Techniques
+      Basics of Support Techniques (Beginner)
+      Individualized Education Plans (IEPs) (Beginner)
+      Behavioral Support Techniques (Intermediate)
+      Social and Emotional Support Techniques (Intermediate)
+      Advanced Support Techniques (Advanced)
+      Support Techniques for Specific Disabilities (Intermediate)
+      Support Techniques Case Studies (Intermediate)
+      Support Techniques Projects (Intermediate)
+      Support Techniques Tools and Resources (Beginner)
+
+Specially Abled Education
+    Learning Disabilities
+      Basics of Learning Disabilities (Beginner)
+      Teaching Strategies for Learning Disabilities (Beginner)
+      Assistive Technologies for Learning Disabilities (Intermediate)
+      Creating Inclusive Learning Environments (Intermediate)
+      Advanced Techniques for Teaching Students with Learning Disabilities (Advanced)
+      Case Studies in Learning Disabilities (Intermediate)
+      Projects in Special Education (Intermediate)
+      Tools and Resources for Specially Abled Education (Beginner)
+      Communication Techniques for Students with Learning Disabilities (Intermediate)
+      Collaborative Teaching for Specially Abled Education (Intermediate)
+
+
+Health & Fitness
+  Fitness
+    Exercise
+      Basics of Exercise (Beginner)
+      Cardio Workouts (Beginner)
+      Strength Training (Intermediate)
+      High-Intensity Interval Training (HIIT) (Intermediate)
+      Yoga for Fitness (Intermediate)
+      Pilates for Fitness (Intermediate)
+      Advanced Exercise Techniques (Advanced)
+      Exercise for Different Body Types (Intermediate)
+      Exercise Plans and Routines (Intermediate)
+      Exercise Equipment and Tools (Beginner)
+    Strength Training
+      Basics of Strength Training (Beginner)
+      Strength Training Techniques (Beginner)
+      Advanced Strength Training Techniques (Intermediate)
+      Strength Training for Different Goals (Intermediate)
+      Strength Training Equipment (Intermediate)
+      Strength Training Plans and Routines (Intermediate)
+      Strength Training for Different Body Types (Intermediate)
+      Strength Training Case Studies (Intermediate)
+      Strength Training Projects (Intermediate)
+      Strength Training Tools and Resources (Beginner)
+  Wellness
+    Nutrition
+      Basics of Nutrition (Beginner)
+      Healthy Eating Habits (Beginner)
+      Meal Planning and Preparation (Intermediate)
+      Nutrition for Fitness (Intermediate)
+      Advanced Nutrition Techniques (Advanced)
+      Nutrition for Different Goals (Intermediate)
+      Nutrition for Different Body Types (Intermediate)
+      Nutrition Case Studies (Intermediate)
+      Nutrition Projects (Intermediate)
+      Nutrition Tools and Resources (Beginner)
+    Mental Health
+      Basics of Mental Health (Beginner)
+      Stress Management Techniques (Beginner)
+      Mindfulness and Meditation (Intermediate)
+      Mental Health for Fitness (Intermediate)
+      Advanced Mental Health Techniques (Advanced)
+      Mental Health for Different Goals (Intermediate)
+      Mental Health for Different Body Types (Intermediate)
+      Mental Health Case Studies (Intermediate)
+      Mental Health Projects (Intermediate)
+      Mental Health Tools and Resources (Beginner)
+
+Personal Development
+  Self Improvement
+    Personal Growth
+      Basics of Personal Growth (Beginner)
+      Setting and Achieving Goals (Beginner)
+      Developing Self-Discipline (Intermediate)
+      Building Self-Confidence (Intermediate)
+      Time Management Techniques (Intermediate)
+      Advanced Personal Growth Techniques (Advanced)
+      Personal Growth for Different Goals (Intermediate)
+      Personal Growth Case Studies (Intermediate)
+      Personal Growth Projects (Intermediate)
+      Personal Growth Tools and Resources (Beginner)
+    Mindfulness
+      Basics of Mindfulness (Beginner)
+      Mindfulness Meditation Techniques (Beginner)
+      Mindfulness for Stress Management (Intermediate)
+      Mindfulness for Personal Growth (Intermediate)
+      Advanced Mindfulness Techniques (Advanced)
+      Mindfulness for Different Goals (Intermediate)
+      Mindfulness Case Studies (Intermediate)
+      Mindfulness Projects (Intermediate)
+      Mindfulness Tools and Resources (Beginner)
+  Communication Skills
+    Public Speaking
+      Basics of Public Speaking (Beginner)
+      Overcoming Public Speaking Anxiety (Beginner)
+      Public Speaking Techniques (Intermediate)
+      Advanced Public Speaking Techniques (Advanced)
+      Public Speaking for Different Audiences (Intermediate)
+      Public Speaking Case Studies (Intermediate)
+      Public Speaking Projects (Intermediate)
+      Public Speaking Tools and Resources (Beginner)
+    Writing Skills
+      Basics of Writing Skills (Beginner)
+      Writing Techniques for Different Purposes (Beginner)
+      Advanced Writing Techniques (Intermediate)
+      Writing for Different Audiences (Intermediate)
+      Writing Case Studies (Intermediate)
+      Writing Projects (Intermediate)
+      Writing Tools and Resources (Beginner)
+
+Career Development
+  Job Search
+    Resume Writing
+      Basics of Resume Writing (Beginner)
+      Resume Formatting and Design (Beginner)
+      Writing Effective Cover Letters (Intermediate)
+      Resume Optimization Techniques (Intermediate)
+      Advanced Resume Writing Techniques (Advanced)
+      Resume Writing for Different Industries (Intermediate)
+      Resume Writing Case Studies (Intermediate)
+      Resume Writing Projects (Intermediate)
+      Resume Writing Tools and Resources (Beginner)
+    Interview Preparation
+      Basics of Interview Preparation (Beginner)
+      Common Interview Questions (Beginner)
+      Behavioral Interview Techniques (Intermediate)
+      Advanced Interview Preparation Techniques (Advanced)
+      Interview Preparation for Different Industries (Intermediate)
+      Interview Preparation Case Studies (Intermediate)
+      Interview Preparation Projects (Intermediate)
+      Interview Preparation Tools and Resources (Beginner)
+  Professional Skills
+    Leadership Skills
+      Basics of Leadership Skills (Beginner)
+      Effective Communication Skills (Beginner)
+      Decision Making Skills (Intermediate)
+      Conflict Resolution Skills (Intermediate)
+      Advanced Leadership Skills (Advanced)
+      Leadership Skills for Different Industries (Intermediate)
+      Leadership Skills Case Studies (Intermediate)
+      Leadership Skills Projects (Intermediate)
+      Leadership Skills Tools and Resources (Beginner)
+    Time Management
+      Basics of Time Management (Beginner)
+      Prioritization Techniques (Beginner)
+      Time Management Strategies (Intermediate)
+      Advanced Time Management Techniques (Advanced)
+      Time Management for Different Goals (Intermediate)
+      Time Management Case Studies (Intermediate)
+      Time Management Projects (Intermediate)
+      Time Management Tools and Resources (Beginner)
+
+Medical Science
+  Anatomy and Physiology
+    Basics
+      Introduction to Human Anatomy (Beginner)
+      Introduction to Human Physiology (Beginner)
+      Body Systems Overview (Beginner)
+      Advanced Human Anatomy (Intermediate)
+      Advanced Human Physiology (Intermediate)
+      Clinical Applications of Anatomy (Advanced)
+      Clinical Applications of Physiology (Advanced)
+      Comparative Anatomy (Intermediate)
+      Anatomy and Physiology Case Studies (Intermediate)
+      Anatomy and Physiology Tools and Resources (Beginner)
+  Clinical Medicine
+    General Medicine
+      Basics of Clinical Medicine (Beginner)
+      Diagnosis and Treatment Planning (Intermediate)
+      Patient Care Techniques (Intermediate)
+      Advanced Clinical Medicine Techniques (Advanced)
+      Clinical Case Studies (Intermediate)
+      Clinical Research Methods (Intermediate)
+      Clinical Medicine Specialties (Advanced)
+      Clinical Trials Design (Advanced)
+      Patient-Doctor Communication (Intermediate)
+      Clinical Medicine Tools and Resources (Beginner)
+  Medical ResearcH
+    Research Methods
+      Introduction to Medical Research (Beginner)
+      Designing Medical Studies (Intermediate)
+      Biostatistics for Medical Research (Intermediate)
+      Advanced Research Methods (Advanced)
+      Medical Ethics in Research (Intermediate)
+      Clinical Trials and Research (Intermediate)
+      Translational Research (Advanced)
+      Research Publications and Presentations (Intermediate)
+      Research Tools and Resources (Beginner)
+      Medical Research Case Studies (Intermediate)
+
+  Public Health
+    Epidemiology
+      Basics of Epidemiology (Beginner)
+      Disease Surveillance Techniques (Intermediate)
+      Epidemiological Research Methods (Intermediate)
+      Advanced Epidemiology (Advanced)
+      Public Health Policy and Management (Intermediate)
+      Global Health Issues (Intermediate)
+      Health Promotion Strategies (Intermediate)
+      Environmental Health (Advanced)
+      Public Health Case Studies (Intermediate)
+      Public Health Tools and Resources (Beginner)
+    Health Education
+      Basics of Health Education (Beginner)
+      Designing Health Education Programs (Intermediate)
+      Health Communication Strategies (Intermediate)
+      Community Health Education (Intermediate)
+      Advanced Health Education Techniques (Advanced)
+      Health Education for Different Populations (Intermediate)
+      Health Education Case Studies (Intermediate)
+      Health Education Projects (Intermediate)
+      Health Education Tools and Resources (Beginner)
+
+  Medical Technology
+    Medical Imaging
+      Basics of Medical Imaging (Beginner)
+      Advanced Medical Imaging Techniques (Intermediate)
+      MRI and CT Imaging (Intermediate)
+      Ultrasound Imaging (Intermediate)
+      Imaging Interpretation Skills (Advanced)
+      Imaging Technology Development (Advanced)
+      Imaging Case Studies (Intermediate)
+      Imaging Tools and Resources (Beginner)
+    Health Informatics
+      Basics of Health Informatics (Beginner)
+      Electronic Health Records (Intermediate)
+      Health Data Management (Intermediate)
+      Advanced Health Informatics Techniques (Advanced)
+      Health Informatics Case Studies (Intermediate)
+      Health Informatics Projects (Intermediate)
+      Health Informatics Tools and Resources (Beginner)
+
+Engineering
+  Mechanical Engineering
+    Thermodynamics
+      Introduction to Thermodynamics (Beginner)
+      Thermodynamic Systems and Processes (Intermediate)
+      Advanced Thermodynamics (Advanced)
+      Thermodynamics in Engineering Applications (Intermediate)
+      Computational Thermodynamics (Advanced)
+    Fluid Mechanics
+      Basics of Fluid Mechanics (Beginner)
+      Fluid Dynamics (Intermediate)
+      Computational Fluid Dynamics (Advanced)
+      Hydraulic Systems (Intermediate)
+      Fluid Mechanics for Mechanical Engineers (Intermediate)
+    Mechanical Design
+      Basics of Mechanical Design (Beginner)
+      CAD for Mechanical Design (Beginner)
+      Advanced Mechanical Design Techniques (Intermediate)
+      Design for Manufacturing (Intermediate)
+      Finite Element Analysis (Advanced)
+  Electrical Engineering
+    Circuit Analysis
+      Introduction to Circuit Analysis (Beginner)
+      AC/DC Circuit Analysis (Intermediate)
+      Advanced Circuit Techniques (Advanced)
+      Circuit Simulation Tools (Intermediate)
+      Circuit Design Projects (Intermediate)
+    Power Systems
+      Basics of Power Systems (Beginner)
+      Power Generation and Distribution (Intermediate)
+      Renewable Energy Systems (Intermediate)
+      Power Electronics (Advanced)
+      Smart Grid Technology (Advanced)
+    Control Systems
+      Introduction to Control Systems (Beginner)
+      PID Control (Intermediate)
+      Digital Control Systems (Intermediate)
+      Advanced Control Systems (Advanced)
+      Control Systems in Robotics (Intermediate)
+
+  Electronics Engineering
+    Digital Electronics
+      Basics of Digital Electronics (Beginner)
+      Digital Logic Design (Intermediate)
+      Microcontroller Programming (Intermediate)
+      FPGA Design (Advanced)
+      Digital Electronics Projects (Intermediate)
+    Analog Electronics
+      Introduction to Analog Electronics (Beginner)
+      Analog Circuit Design (Intermediate)
+      Operational Amplifiers (Intermediate)
+      Advanced Analog Electronics (Advanced)
+      Analog Signal Processing (Intermediate)
+    Embedded Systems
+      Basics of Embedded Systems (Beginner)
+      Embedded C Programming (Intermediate)
+      Real-Time Operating Systems (Advanced)
+      Embedded Systems Design (Intermediate)
+      Internet of Things (IoT) (Advanced)
+Materials Engineering
+
+Materials Science
+Introduction to Materials Science (Beginner)
+Properties of Materials (Intermediate)
+Advanced Materials Science (Advanced)
+Materials Characterization Techniques (Intermediate)
+Materials Science Projects (Intermediate)
+Metallurgy
+Basics of Metallurgy (Beginner)
+Heat Treatment Processes (Intermediate)
+Advanced Metallurgical Techniques (Advanced)
+Metallurgical Failure Analysis (Intermediate)
+Metallurgy for Engineers (Intermediate)
+Polymers and Composites
+Introduction to Polymers (Beginner)
+Polymer Processing (Intermediate)
+Composite Materials (Intermediate)
+Advanced Polymer Science (Advanced)
+Polymer and Composite Applications (Intermediate)
+Industrial Engineering
+
+Operations Management
+Basics of Operations Management (Beginner)
+Lean Manufacturing (Intermediate)
+Six Sigma Methodology (Intermediate)
+Advanced Operations Management (Advanced)
+Operations Research Techniques (Intermediate)
+Systems Engineering
+Introduction to Systems Engineering (Beginner)
+Systems Thinking (Intermediate)
+Systems Engineering Tools (Intermediate)
+Advanced Systems Engineering (Advanced)
+Systems Integration (Intermediate)
+Quality Engineering
+Basics of Quality Engineering (Beginner)
+Statistical Process Control (Intermediate)
+Quality Management Systems (Intermediate)
+Advanced Quality Engineering Techniques (Advanced)
+Quality Engineering Tools (Intermediate)
+Manufacturing Engineering
+
+Manufacturing Processes
+Introduction to Manufacturing Processes (Beginner)
+CNC Machining (Intermediate)
+Additive Manufacturing (Intermediate)
+Advanced Manufacturing Techniques (Advanced)
+Manufacturing Process Optimization (Intermediate)
+Production Planning
+Basics of Production Planning (Beginner)
+Production Scheduling Techniques (Intermediate)
+Inventory Management (Intermediate)
+Advanced Production Planning (Advanced)
+Production Planning Software (Intermediate)
+Manufacturing Systems
+Introduction to Manufacturing Systems (Beginner)
+Automation in Manufacturing (Intermediate)
+Manufacturing Systems Design (Intermediate)
+Advanced Manufacturing Systems (Advanced)
+Manufacturing Systems Integration (Intermediate)
+Civil Engineering
+
+Structural Engineering
+Basics of Structural Engineering (Beginner)
+Structural Analysis (Intermediate)
+Advanced Structural Design (Advanced)
+Concrete and Steel Structures (Intermediate)
+Structural Engineering Software (Intermediate)
+Geotechnical Engineering
+Introduction to Geotechnical Engineering (Beginner)
+Soil Mechanics (Intermediate)
+Foundation Engineering (Intermediate)
+Advanced Geotechnical Techniques (Advanced)
+Geotechnical Engineering Projects (Intermediate)
+Transportation Engineering
+Basics of Transportation Engineering (Beginner)
+Traffic Engineering (Intermediate)
+Highway Design (Intermediate)
+Advanced Transportation Systems (Advanced)
+Transportation Planning and Management (Intermediate)
+Chemical Engineering
+
+Process Engineering
+Introduction to Process Engineering (Beginner)
+Chemical Process Design (Intermediate)
+Process Control and Instrumentation (Intermediate)
+Advanced Process Engineering (Advanced)
+Process Optimization Techniques (Intermediate)
+Chemical Reaction Engineering
+Basics of Chemical Reaction Engineering (Beginner)
+Kinetics and Reactor Design (Intermediate)
+Advanced Chemical Reaction Engineering (Advanced)
+Catalysis in Chemical Reactions (Intermediate)
+Chemical Reaction Engineering Projects (Intermediate)
+Separation Processes
+Introduction to Separation Processes (Beginner)
+Distillation and Absorption (Intermediate)
+Advanced Separation Techniques (Advanced)
+Membrane Separation (Intermediate)
+Separation Process Design (Intermediate)
+Aerospace Engineering
+
+Aerodynamics
+Basics of Aerodynamics (Beginner)
+Aerodynamic Theory (Intermediate)
+Computational Aerodynamics (Advanced)
+Wind Tunnel Testing (Intermediate)
+Aerodynamics Projects (Intermediate)
+Propulsion Systems
+Introduction to Propulsion Systems (Beginner)
+Jet Engines and Turbines (Intermediate)
+Rocket Propulsion (Intermediate)
+Advanced Propulsion Techniques (Advanced)
+Propulsion Systems Design (Intermediate)
+Aerospace Structures
+Basics of Aerospace Structures (Beginner)
+Structural Analysis in Aerospace (Intermediate)
+Advanced Aerospace Structures (Advanced)
+Composite Materials in Aerospace (Intermediate)
+Aerospace Structures Projects (Intermediate)
+Software Engineering
+
+Software Development
+Introduction to Software Engineering (Beginner)
+Agile Software Development (Intermediate)
+Software Development Life Cycle (Intermediate)
+Advanced Software Development Techniques (Advanced)
+Software Project Management (Intermediate)
+Software Architecture
+Basics of Software Architecture (Beginner)
+Design Patterns (Intermediate)
+Microservices Architecture (Intermediate)
+Advanced Software Architecture (Advanced)
+Software Architecture Case Studies (Intermediate)
+Testing and Quality Assurance
+Introduction to Software Testing (Beginner)
+Automated Testing (Intermediate)
+Advanced Testing Techniques (Advanced)
+Quality Assurance Practices (Intermediate)
+Testing Tools and Frameworks (Intermediate)
+
+
+
+
+
+
+
+
