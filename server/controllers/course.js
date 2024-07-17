@@ -1,6 +1,7 @@
 import { extractJSON } from "../helpers.js";
 import Course from "../models/course.js";
 import OpenAI from "openai";
+import sharp from "sharp";
 
 const openai = new OpenAI({ apiKey: `${process.env.OPENAI_API_KEY}` });
 
@@ -132,17 +133,6 @@ export const getCourse = async (req, res) => {
     }
 };
 
-export const createCourse = async (req, res) => {
-    try {
-        const course = new Course(req.body);
-        await course.save();
-        res.json(course);
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Server Error");
-    }
-};
-
 export const createCourseGPT = async (req, res) => {
     const { name, level } = req.body;
 
@@ -200,6 +190,8 @@ export const addCardImageGPT = async (req, res) => {
         });
 
         const courseCardImage = response.data[0].b64_json;
+
+        // const compressedImage = sharp(Buffer.from(courseCardImage, 'base64'))
         course.card_image = courseCardImage;
 
         await course.save();
@@ -229,10 +221,30 @@ export const addContentGPT = async (req, res) => {
         return res.status(404).send('Section not found');
       }
 
-      // Maintain conversation history including previous responses
+      const trimmedCourse = { 
+        name: course.name, 
+        highlights: course.highlights,
+        level: course.level,
+        card_image: '', // To reduce response size, do not include card image
+        chapters: course.chapters.map(chapter => {
+            return {
+                chapter_number: chapter.chapter_number,
+                chapter_name: chapter.chapter_name,
+                sections: chapter.sections.map(section => {
+                return {
+                    section_number: section.section_number,
+                    section_name: section.section_name,
+                    content: '', // To reduce response size, do not include content
+                };
+                }),
+            };
+        }),
+    };
+
+    // Maintain conversation history including previous responses
     const conversationHistory = [
         { role: 'user', content: generateCoursePrompt(course.name, course.level) },
-        { role: 'assistant', content: JSON.stringify(course) }, // Previous assistant response
+        { role: 'assistant', content: JSON.stringify(trimmedCourse) }, // Previous assistant response
         { role: 'user', content: generateContentPrompt(course.name, chapterNumber, chapter.chapter_name, sectionNumber, section.section_name)}
       ];
   
@@ -252,23 +264,34 @@ export const addContentGPT = async (req, res) => {
     }
   };
 
-export const updateCourse = async (req, res) => {
-    try {
-        const course = await Course.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        res.json(course);
-    }
-    catch (err) {
-        console.error(err);
-        res.status(500).send("Server Error");
-    }
-};
+// export const createCourse = async (req, res) => {
+//     try {
+//         const course = new Course(req.body);
+//         await course.save();
+//         res.json(course);
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).send("Server Error");
+//     }
+// };
 
-export const deleteCourse = async (req, res) => {
-    try {
-        await Course.findByIdAndDelete(req.params.id);
-        res.json({ msg: "Course deleted" });
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Server Error");
-    }
-};
+// export const updateCourse = async (req, res) => {
+//     try {
+//         const course = await Course.findByIdAndUpdate(req.params.id, req.body, { new: true });
+//         res.json(course);
+//     }
+//     catch (err) {
+//         console.error(err);
+//         res.status(500).send("Server Error");
+//     }
+// };
+
+// export const deleteCourse = async (req, res) => {
+//     try {
+//         await Course.findByIdAndDelete(req.params.id);
+//         res.json({ msg: "Course deleted" });
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).send("Server Error");
+//     }
+// };
